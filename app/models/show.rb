@@ -5,7 +5,7 @@ class Show < ActiveRecord::Base
 
   def actors_list
 
-    related_show = Show.joins(:actors, :characters).find_by(characters: {id: id})
+    related_show = Show.joins(:actors, :characters).select(:name)
     # name = related_show.pluck("actors.first_name, actors.last_name").first.join(" ")
   end
 end
