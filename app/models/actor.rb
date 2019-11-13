@@ -6,7 +6,7 @@ class Actor < ActiveRecord::Base
     Actor.pluck(:first_name, :last_name).first.join(" ")
   end
 
-  def list_roles 
+  def list_roles
     self.characters.show
-  end 
+  end
 end
