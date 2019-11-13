@@ -4,8 +4,9 @@ class Show < ActiveRecord::Base
   has_many :actors, through: :characters
 
   def actors_list
+    binding.pry
     name = self.joins(:characters, :actors).pluck("actors.first_name, actors.last_name").first.join(" ")
-    # binding.pry
+
 
   end
 end
