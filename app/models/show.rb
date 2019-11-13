@@ -6,6 +6,6 @@ class Show < ActiveRecord::Base
   def actors_list
     name = Show.joins(:characters, :actors).pluck("actors.first_name, actors.last_name").first.join(" ")
     list = name.split
-    binding.pry
+    # binding.pry
   end
 end
