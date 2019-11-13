@@ -4,6 +4,6 @@ class Show < ActiveRecord::Base
   has_many :actors, through: :characters
 
   def actors_list
-    Show.join(:characters, :actors).select(actors.first_name)
+    Show.joins(:characters, :actors).select(actors.first_name)
   end
 end
