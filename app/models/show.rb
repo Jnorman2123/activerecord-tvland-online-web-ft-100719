@@ -4,6 +4,7 @@ class Show < ActiveRecord::Base
   has_many :actors, through: :characters
 
   def actors_list
-    Show.where(:id == self.id).joins(:actors, :characters).pluck("actors.first_name, actors.last_name").first.join(" ")
+    related_show = Show.joins(:actors, :characters).where(:id self)
+    .pluck("actors.first_name, actors.last_name").first.join(" ")
   end
 end
