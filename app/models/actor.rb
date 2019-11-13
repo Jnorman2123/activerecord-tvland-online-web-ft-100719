@@ -3,6 +3,6 @@ class Actor < ActiveRecord::Base
   has_many :shows, through: :characters
 
   def full_name
-    Actor.pluck(:first_name, :last_name)[0].flatten
+    Actor.pluck(:first_name, :last_name)[0].first
   end
 end
