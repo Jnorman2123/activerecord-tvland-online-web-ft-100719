@@ -5,5 +5,7 @@ class Show < ActiveRecord::Base
 
   def actors_list
     name = Show.joins(:characters, :actors).pluck("actors.first_name, actors.last_name").first.join(" ")
+    binding.pry
+
   end
 end
