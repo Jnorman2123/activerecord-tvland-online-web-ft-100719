@@ -6,6 +6,7 @@ class Show < ActiveRecord::Base
   def actors_list
 
     related_show = Show.joins(:actors, :characters).where(characters: {id: id})
-    related_show.pluck("actors.first_name, actors.last_name").first.join(", ")
+    name_array = related_show.pluck("actors.first_name, actors.last_name").first.join(", ")
+    p name_array.first.join
   end
 end
